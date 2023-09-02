@@ -12,4 +12,10 @@ function getComputerChoice() {
     return random
 }
 
+function getPlayerChoice () {
+    const choice = prompt("Choose")
+    return choice
+}
+
 const computerSelection = getComputerChoice()
+const playerSelection = getPlayerChoice()
