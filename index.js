@@ -19,15 +19,15 @@ function getPlayerChoice() {
   return choice.toLowerCase();
 }
 
-function playRound(lowercasePlayer, lowercaseComputer) {
-  if (lowercasePlayer === lowercaseComputer) {
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
     return "Tie! " + playerSelection + " is equal to " + computerSelection;
   }
 
   const hasPlayerWon =
-    (lowercasePlayer === "rock" && lowercaseComputer === "scissors") ||
-    (lowercasePlayer === "paper" && lowercaseComputer === "rock") ||
-    (lowercasePlayer === "scissors" && lowercaseComputer === "paper");
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper");
 
   if (hasPlayerWon) {
     playerScore = playerScore + 1;
@@ -35,15 +35,15 @@ function playRound(lowercasePlayer, lowercaseComputer) {
   }
 
   const hasComputerWon =
-    (lowercaseComputer === "rock" && lowercasePlayer === "scissors") ||
-    (lowercaseComputer === "paper" && lowercasePlayer === "rock") ||
-    (lowercaseComputer === "scissors" && lowercasePlayer === "paper");
+    (computerSelection === "rock" && playerSelection === "scissors") ||
+    (computerSelection === "paper" && playerSelection === "rock") ||
+    (computerSelection === "scissors" && playerSelection === "paper");
 
   if (hasComputerWon) {
     computerScore = computerScore + 1;
     return "You Lose! " + computerSelection + " beats " + playerSelection;
   } else {
-    return "Not a option";
+    return "Not an option";
   }
 }
 
