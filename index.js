@@ -13,8 +13,14 @@ function getComputerChoice() {
   return random.toLowerCase();
 }
 
+const btnRock = document.querySelector("#btn-rock");
+btnRock.addEventListener("click", () => {
+  const choice = "rock";
+  return choice;
+});
+
 function getPlayerChoice() {
-  const choice = prompt("Choose");
+  /*const choice = prompt("Choose");*/
   console.log(choice);
   return choice.toLowerCase();
 }
