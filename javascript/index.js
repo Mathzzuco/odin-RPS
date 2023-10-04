@@ -1,4 +1,4 @@
-let result = "Not played yet";
+let result = "Not played yet.";
 let computerScore = 0;
 let playerScore = 0;
 
@@ -21,29 +21,20 @@ const computerSelection = getComputerChoice();
 const btnRock = document.querySelector("#btn-rock");
 btnRock.addEventListener("click", () => {
   const playerSelection = "rock";
-  console.log(playRound(playerSelection, getComputerChoice()));
-  return playerSelection;
+  return playRound(playerSelection, getComputerChoice());
 });
 
 const btnPaper = document.querySelector("#btn-paper");
 btnPaper.addEventListener("click", () => {
   const playerSelection = "paper";
-  console.log(playRound(playerSelection, getComputerChoice()));
-  return playerSelection;
+  return playRound(playerSelection, getComputerChoice());
 });
 
 const btnScissors = document.querySelector("#btn-scissors");
 btnScissors.addEventListener("click", () => {
   const playerSelection = "scissors";
-  // console.log(playRound(playerSelection, getComputerChoice()));
   return playRound(playerSelection, getComputerChoice());
 });
-
-/*function getPlayerChoice() {
-  const choice = prompt("Choose");
-  console.log(choice);
-  return choice.toLowerCase();
-} */
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -59,7 +50,8 @@ function playRound(playerSelection, computerSelection) {
 
   if (hasPlayerWon) {
     playerScore = playerScore + 1;
-    result = "You Win! " + playerSelection + " beats " + computerSelection;
+    result =
+      "You Win! " + playerSelection + " beats " + computerSelection + ".";
     displayScore();
     return result;
   }
@@ -71,7 +63,8 @@ function playRound(playerSelection, computerSelection) {
 
   if (hasComputerWon) {
     computerScore = computerScore + 1;
-    result = "You Lose! " + computerSelection + " beats " + playerSelection;
+    result =
+      "You Lose! " + computerSelection + " beats " + playerSelection + ".";
     displayScore();
     return result;
   } else {
@@ -84,34 +77,6 @@ function resetScore() {
   computerScore = 0;
 }
 
-/*function game() {
-  resetScore();
-  for (let x = 0; x < 5; x++) {
-    const gameLowercasePlayer = getPlayerChoice();
-    const gameLowercaseComputer = getComputerChoice();
-    console.log(playRound(gameLowercasePlayer, gameLowercaseComputer));
-  }
-  if (playerScore > computerScore) {
-    return (
-      "You Won! Your score: " +
-      playerScore +
-      " Computer score: " +
-      computerScore
-    );
-  }
-  if (computerScore > playerScore) {
-    return (
-      "You Lost! Your score: " +
-      playerScore +
-      " Computer score: " +
-      computerScore
-    );
-  } else {
-    return (
-      "Tie! Your score: " + playerScore + " Computer score: " + computerScore
-    );
-  }
-}*/
 function displayScore() {
   if (playerScore >= 5) {
     document.querySelector(".results").innerHTML =
@@ -123,7 +88,7 @@ function displayScore() {
       "<br>" +
       result +
       "<br>" +
-      "The player is the winner";
+      "The Player is the winner!";
     resetScore();
   } else if (computerScore >= 5) {
     document.querySelector(".results").innerHTML =
@@ -135,7 +100,7 @@ function displayScore() {
       "<br>" +
       result +
       "<br>" +
-      "The computer is the winner";
+      "The Computer is the winner!";
     resetScore();
   } else
     document.querySelector(".results").innerHTML =
