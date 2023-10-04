@@ -38,7 +38,8 @@ btnScissors.addEventListener("click", () => {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    result = "Tie! " + playerSelection + " is equal to " + computerSelection;
+    result =
+      "Tie! " + playerSelection + " is equal to " + computerSelection + ".";
     displayScore();
     return result;
   }
@@ -78,38 +79,23 @@ function resetScore() {
 }
 
 function displayScore() {
-  if (playerScore >= 5) {
-    document.querySelector(".results").innerHTML =
-      "Player Score: " +
-      playerScore +
-      "<br>" +
-      "Computer Score: " +
-      computerScore +
-      "<br>" +
-      result +
-      "<br>" +
-      "The Player is the winner!";
+  const hasGameEnded = playerScore >= 5 || computerScore >= 5;
+
+  document.querySelector(".player-score span").innerHTML = playerScore;
+  document.querySelector(".computer-score span").innerHTML = computerScore;
+  document.querySelector(".match-result p").innerHTML = result;
+
+  let finalResult = "";
+
+  if (hasGameEnded) {
+    if (playerScore > computerScore) {
+      finalResult = "The Player is the winner!";
+    } else {
+      finalResult = "The Computer is the winner!";
+    }
     resetScore();
-  } else if (computerScore >= 5) {
-    document.querySelector(".results").innerHTML =
-      "Player Score: " +
-      playerScore +
-      "<br>" +
-      "Computer Score: " +
-      computerScore +
-      "<br>" +
-      result +
-      "<br>" +
-      "The Computer is the winner!";
-    resetScore();
-  } else
-    document.querySelector(".results").innerHTML =
-      "Player Score: " +
-      playerScore +
-      "<br>" +
-      "Computer Score: " +
-      computerScore +
-      "<br>" +
-      result;
+  }
+
+  document.querySelector(".final-result p").innerHTML = finalResult;
 }
 displayScore();

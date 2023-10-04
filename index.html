@@ -4,13 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap"
+      rel="stylesheet"
+    />
     <link href="css/reset.css" rel="stylesheet" type="text/css" />
     <link href="css/index.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div id="game">
-      <h1>Rock Paper Scissors</h1>
-      <div class="game-bg">
+    <div class="bg">
+      <header><h1>Rock Paper Scissors</h1></header>
+      <div id="game">
+        <div class="results">
+          <div class="score-container">
+            <div class="player-score">
+              <h3>Player Score</h3>
+              <span>0</span>
+            </div>
+            <div class="computer-score">
+              <span>0</span>
+              <h3>Computer Score</h3>
+            </div>
+          </div>
+          <div class="match-result"><p>Not played yet.</p></div>
+          <div class="final-result"><p></p></div>
+        </div>
         <div class="game-content container">
           <button id="btn-rock">
             <img src="img/hand-back-fist-solid.svg" alt="rock" />
@@ -19,12 +39,15 @@
             <img src="img/hand-solid.svg" alt="paper" />
           </button>
           <button id="btn-scissors">
-            <img src="img/hand-scissors-solid.svg" alt="scissors" />
+            <img
+              class="scissor-icon"
+              src="img/hand-scissors-solid.svg"
+              alt="scissors"
+            />
           </button>
         </div>
       </div>
     </div>
-    <div class="results"></div>
     <script src="javascript/index.js"></script>
   </body>
 </html>

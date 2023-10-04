@@ -1,11 +1,56 @@
-#game {
-  background-color: #ffb048;
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #ffb048;
+}
+
+header {
+  padding-top: 16px;
   text-align: center;
 }
 
-#game h1 {
+header h1 {
   font-size: 40px;
   color: #000000;
+}
+
+.results {
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 10px;
+  color: #000000;
+}
+
+.results p {
+  font-size: 20px;
+  line-height: 20px;
+  display: inline-block;
+}
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding-bottom: 10px;
+}
+
+.score-container h3 {
+  font-size: 24px;
+}
+
+.score-container span {
+  font-size: 32px;
+}
+
+.player-score,
+.computer-score {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .container {
@@ -13,11 +58,6 @@
   max-width: 1000px;
   min-height: 0;
   margin: 0 auto;
-}
-
-.game-bg {
-  background-color: #ffb048;
-  height: 360px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -27,11 +67,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  padding-top: 50px;
 }
 
 .game-content button {
   width: 250px;
   height: 250px;
+  cursor: pointer;
   background-color: #fdd57e;
   border: 5px solid #4e4eff;
   border-radius: 17px;
@@ -40,4 +82,12 @@
 .game-content img {
   width: 200px;
   height: 200px;
+}
+
+.game-content .scissor-icon {
+  rotate: 90deg;
+}
+
+body {
+  font-family: "Roboto";
 }
